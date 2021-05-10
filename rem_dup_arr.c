@@ -14,9 +14,9 @@ int main()
 		{
 			j++;
 			a[j] = a[i];
-			printf("a[i]=%d\ta[j]=%d\t",a[i],a[j]);
+		//	printf("a[i]=%d\ta[j]=%d\t",a[i],a[j]);
 		}
-		printf("\n");
+		//printf("\n");
 	}
 	arr_size = j+1;
 	
