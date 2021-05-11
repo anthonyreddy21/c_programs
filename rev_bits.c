@@ -1,36 +1,33 @@
+//      Write an Efficient C Program to Reverse Bits of a Number
 
-#include<stdio.h>
+
+#include <stdio.h>
 
 int main()
 {
 
-	int num=0;
-	unsigned int bits = 8*sizeof(int); 
-	int temp=0,rev_num=0;
+	int i,num=0,x=0,temp=0;
 
-	printf("enter a number to reverse its bits\n");
+	printf("enter the number to reverse the bits\n");
 	scanf("%d",&num);
-	
-	printf("binary representation of number is \n");
-	for(int i=31;i>=0;i--)
-		printf(" %d ",(num>>i)&1);
-  
-	for (int i = 0; i < bits; i++) 
-	{ 
-		temp = (num & (1 << i)); 
-		if(temp) 
-		rev_num |= (1 << ((bits - 1) - i)); 
-	} 
-   
-   	printf("\nrev no. is %d\n",rev_num);
 
-	printf("binary representation of reversed number is \n");   
-	for(int i=31;i>=0;i--)
-		printf(" %d ",(rev_num>>i)&1);
-		
+	for(int j=31;j>=0;j--)
+	printf("%d ",num >> j & 1);				//  for printing the actual number in bits
 	printf("\n");
-   
-	return 0; 
 
-}    
+	for(i=0;i<32;i++)					//   reversing the number
+	{
+		temp = (num >> i) & 1;
+		if(temp == 1)
+		{
+			x |= (1 << 31-i);
+		}
+		
+	}
 
+	for(int j=31;j>=0;j--)
+	printf("%d ",x >> j & 1);
+
+	printf("\n");
+
+}
